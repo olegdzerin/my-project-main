@@ -1,0 +1,26 @@
+<h2>First Component</h2>
+<button (click)="commitSubscribe()">btn</button>
+
+<div *ngFor = "let hero of heroes">
+  <ul>
+      <li> {{hero.id}} </li> <span>{{hero.name}}</span>
+      <li>
+        
+      </li>
+  </ul>
+  <a routerLink="/heroes/{{hero.id}}">go to item</a>
+  <a [routerLink]="['/heroes', hero.id]">go to item variant-2</a>
+  <a [routerLink]="['/heroes/child-a']">go to children route</a>
+  <button (click)="logItemId(hero)"> btn</button>
+</div>
+
+<nav>
+  <ul>
+    <li><a routerLink="../heroes/2">Relative Route to second component</a></li>
+    <li><a routerLink="child-a">Child A</a></li>
+    <li><a [routerLink]="['child-a']">Child A variant2</a></li>
+    <li><a routerLink="child-b">Child B</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
