@@ -1,7 +1,8 @@
 <p>login works!</p>
+{{inputValue}}
+<input type="text" [formControl]="nameControl"><button (click)="initLoggedIn()">login</button>
 
-<input type="text" [(ngModel)]="login">
-<button id="login-btn-hide" (click)="initLoggedIn()"> log</button>
+
 <div *ngIf="conditionNotLogin">
     Введіть правильний логін
 </div>

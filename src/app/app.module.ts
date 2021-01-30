@@ -13,7 +13,7 @@ import { ChildBComponent } from './first/child-b/child-b.component';
 
 
 import { AdminModule } from './admin/admin.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,  ReactiveFormsModule} from '@angular/forms';
 import { CustomersModule } from './customers/customers.module';
 import { OrdersModule } from './orders/orders.module';
 import { LoginComponent } from './login/login.component';
@@ -39,6 +39,7 @@ import { LoginComponent } from './login/login.component';
     AdminModule,
     CustomersModule,
     OrdersModule,
+    ReactiveFormsModule
 
 
 
