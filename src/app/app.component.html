@@ -1,23 +1,34 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <h1>Angular Router App</h1>
 <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav style="right: auto;">
+<div style="width: 100px;margin-left: 650px;">
+ 
+    <button id="login" *ngIf="true" (click)="login()">
+      <a routerLink="/login"  routerLinkActive="active">login</a>
+    </button>
+    <button id="logout" *ngIf="true" (click)="logout()">
+      <a routerLink="/login"  routerLinkActive="active">logout</a>
+    </button>
+  
+</div></nav>
 <nav>
   <ul>
     <li><a routerLink="/heroes" routerLinkActive="active">First Component</a></li>
     <li><a routerLink="/heroes/2" routerLinkActive="active">Second Component</a></li>
   </ul>
 </nav>
-<button routerLink="/customers">Customers</button>
-<button routerLink="/orders">Orders</button>
-<a routerLink="/admin" routerLinkActive="active">Admin</a>
+
+<div>this is loudChildren Component
+  <button routerLink="/customers">Customers</button>
+</div>
+<div>this is loudChildren Component
+  <button routerLink="/orders">Orders</button>
+</div>
+<div>this is loudChildren Component that use CanActivate
+  <a routerLink="/admin" routerLinkActive="active">Admin</a>
+</div>
+
+
 <button routerLink="">Home</button>
 <!-- The routed views render in the <router-outlet>-->
 <router-outlet></router-outlet>

@@ -1,0 +1,7 @@
+<p>login works!</p>
+
+<input type="text" [(ngModel)]="login">
+<button id="login-btn-hide" (click)="initLoggedIn()"> log</button>
+<div *ngIf="conditionNotLogin">
+    Введіть правильний логін
+</div>

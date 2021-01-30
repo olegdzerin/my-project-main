@@ -16,6 +16,7 @@ import { AdminModule } from './admin/admin.module';
 import { FormsModule } from '@angular/forms';
 import { CustomersModule } from './customers/customers.module';
 import { OrdersModule } from './orders/orders.module';
+import { LoginComponent } from './login/login.component';
 // import {AdminComponent } from './admin/admin/admin.component'
 
 @NgModule({
@@ -26,6 +27,7 @@ import { OrdersModule } from './orders/orders.module';
     PageNotFoundComponent,
     ChildAComponent,
     ChildBComponent,
+    LoginComponent,
     // AdminComponent 
    
   

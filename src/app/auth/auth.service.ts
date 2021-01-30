@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
+import { Observable, of, fromEvent } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
 
 @Injectable({
@@ -21,5 +21,9 @@ export class AuthService {
 
   logout(): void {
     this.isLoggedIn = false;
+  }
+  
+  hideBtnLoginForEvent(){
+    return fromEvent(document.getElementById("login-btn-hide"),'click');
   }
 }
