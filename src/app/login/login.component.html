@@ -1,24 +1,21 @@
 <p>login works!</p>
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" id="profileForm" >
   
     <label>
       First Name:
-      <input type="text" formControlName="firstName">
+      <input type="text" formControlName="firstName"  required minlength="5">
     </label>
   
     <label>
       Last Name:
-      <input type="email" formControlName="lastName">
+      <input type="email" formControlName="lastName" >
     </label>
 
-    <label>
-        Last Name:
-        <input type="submit" placeholder="submit">
-      </label>
+    
       <div formGroupName="address">
         <label>
             Street:
-            <input type="text" formControlName="street">
+            <input type="text" formControlName="street" required>
           </label>
           <label>
             City:
@@ -33,8 +30,19 @@
             <input type="text" formControlName="zip">
           </label>
       </div>
+
+         <label >
+             Submit:
+             <input type="submit" placeholder="submit" form="profileForm" [disabled]="profileForm.status === 'INVALID'">
+             <button type="submit" placeholder="submit" form="profileForm" [disabled]="profileForm.status === 'INVALID'">Submit</button>
+         </label>
+    
   
   </form>
+ 
+  <p>
+    Form Status: {{ profileForm.status }}
+  </p>
 
 <div *ngIf="conditionNotLogin" [disabled]="!profileForm.valid">
     Введіть правильний логін

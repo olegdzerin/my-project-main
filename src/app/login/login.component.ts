@@ -5,6 +5,7 @@ import {Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AppService} from  '../app.service';
 // import {FormControl, FormGroup} from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -20,9 +21,10 @@ export class LoginComponent implements OnInit {
    isLoggedIn = true ;
    conditionNotLogin = false;
    login = "";
+   
    profileForm = this.fb.group({
     firstName: [''],
-    lastName: [''],
+    lastName: ['', Validators.required],
     address: this.fb.group({
       street: [''],
       city: [''],
