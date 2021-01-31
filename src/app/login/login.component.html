@@ -1,8 +1,44 @@
 <p>login works!</p>
-{{inputValue}}
-<input type="text" [formControl]="nameControl"><button (click)="initLoggedIn()">login</button>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName">
+    </label>
+  
+    <label>
+      Last Name:
+      <input type="email" formControlName="lastName">
+    </label>
 
+    <label>
+        Last Name:
+        <input type="submit" placeholder="submit">
+      </label>
+      <div formGroupName="address">
+        <label>
+            Street:
+            <input type="text" formControlName="street">
+          </label>
+          <label>
+            City:
+            <input type="text" formControlName="city">
+          </label>
+          <label>
+            State:
+            <input type="text" formControlName="state">
+          </label>
+          <label>
+            Zip Code:
+            <input type="text" formControlName="zip">
+          </label>
+      </div>
+  
+  </form>
 
-<div *ngIf="conditionNotLogin">
+<div *ngIf="conditionNotLogin" [disabled]="!profileForm.valid">
     Введіть правильний логін
 </div>
+<p>
+    <button (click)="updateProfile()">Update Profile</button>
+  </p>

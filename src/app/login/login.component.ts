@@ -3,20 +3,32 @@ import {AuthService} from '../auth/auth.service';
 import {Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import { AppService} from  '../app.service';
-import {FormControl} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, AfterViewInit {
+export class LoginComponent implements OnInit {
   inputValue;
-  data = "Oleg"
+  data = {
+    firstName: "Oleg",
+    lastName: "Dz"
+    };
    isLoggedIn = true ;
    conditionNotLogin = false;
    login = "";
-   nameControl = new FormControl('');
+   profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    address: new FormGroup({
+      street: new FormControl(''),
+      city: new FormControl(''),
+      state: new FormControl(''),
+      zip: new FormControl(''),
+    })
+  });
   constructor(private authService: AuthService,
     private route: ActivatedRoute,
                private router: Router,
@@ -25,20 +37,31 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   
   ngOnInit(): void {
-      this.nameControl.valueChanges.subscribe(value => this.inputValue = value)
-
-  }
-  ngAfterViewInit(){
    }
-initLoggedIn(){
-
-  if(this.inputValue === this.data) {
-  // if(this.nameControl.value === this.data) {
+  onSubmit() {
+     console.log(this.profileForm.value.firstName , this.data.firstName);
+     if((this.profileForm.value.firstName === this.data.firstName)&&
+     (this.profileForm.value.lastName === this.data.lastName)) {
     this.authService.isLoggedIn = true;
     this.router.navigate([`/admin`]);
    
   }else{
     this.conditionNotLogin = !this.authService.isLoggedIn
   }
- }
+ 
+   //  console.warn(this.profileForm.value);
+  }
+
+  updateProfile() {
+    this.profileForm.patchValue({
+      firstName: 'Nancy',
+      address: {
+        street: '123 Drew Street'
+      }
+    });
+  }
+
+
+ 
+ 
 }
