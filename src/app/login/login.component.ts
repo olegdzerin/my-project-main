@@ -3,7 +3,8 @@ import {AuthService} from '../auth/auth.service';
 import {Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import { AppService} from  '../app.service';
-import {FormControl, FormGroup} from '@angular/forms';
+// import {FormControl, FormGroup} from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -19,20 +20,21 @@ export class LoginComponent implements OnInit {
    isLoggedIn = true ;
    conditionNotLogin = false;
    login = "";
-   profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    address: new FormGroup({
-      street: new FormControl(''),
-      city: new FormControl(''),
-      state: new FormControl(''),
-      zip: new FormControl(''),
-    })
+   profileForm = this.fb.group({
+    firstName: [''],
+    lastName: [''],
+    address: this.fb.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: ['']
+    }),
   });
   constructor(private authService: AuthService,
     private route: ActivatedRoute,
                private router: Router,
               private service: AppService,
+              private fb: FormBuilder
               ) { }
 
   
