@@ -1,4 +1,8 @@
+import { LocationChangeListener } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
+import { ParentService } from '../parent.service';
+
 
 @Component({
   selector: 'app-manage-heroes',
@@ -6,10 +10,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-heroes.component.css']
 })
 export class ManageHeroesComponent implements OnInit {
-
-  constructor() { }
+    parent = 'not good';
+  constructor( private parentService: ParentService) { }
 
   ngOnInit(): void {
+   // this.parent = this.parentService.parent
   }
 
 }
