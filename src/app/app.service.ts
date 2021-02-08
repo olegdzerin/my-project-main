@@ -11,7 +11,7 @@ import {map} from'rxjs/operators'
 })
 export class AppService {
    heroes$: Observable<any>;
-   heroes: Hero[];
+   heroes: Hero[] = HEROES;
   constructor() { }
   getHeroes(){
     //  this.heroes$ = of(HEROES);
@@ -20,7 +20,7 @@ export class AppService {
   };
   getHero(id: any){
    const hero = this.heroes.filter(item => item.id === id);
-      console.log(hero);
+     // console.log(hero);
       return hero;
   }
 }

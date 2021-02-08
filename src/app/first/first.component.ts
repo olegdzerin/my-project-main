@@ -1,34 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-// import { ActivatedRoute } from '@angular/router';
-// import { Observable } from 'rxjs';
-// import { switchMap } from 'rxjs/operators';
-// import { AppService } from '../app.service';
-// import {HEROES} from '../moch-data'
-
-// @Component({
-//   selector: 'app-first',
-//   templateUrl: './first.component.html',
-//   styleUrls: ['./first.component.css']
-// })
-// export class FirstComponent implements OnInit {
-//   heroes$: Observable<any>;
-// selectedId: number;
-// heroes = HEROES;
-
-//   constructor(private route: ActivatedRoute,
-//                private service: AppService) { }
-
-//   ngOnInit(): void {
-//       this.heroes$ = this.route.paramMap.pipe(
-//       switchMap(params => {
-//         this.selectedId = Number(params.get('id'));
-//         return this.service.getHeroes();
-//       })
-//     );
-//   }
-
-// }
-
 
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, ParamMap } from '@angular/router';
@@ -56,12 +25,6 @@ export class FirstComponent implements OnInit {
               ) { }
 
   ngOnInit() {
-    //  this.service.getHeroes().subscribe(
-    //   data => {
-    //     this.heroes = data;
-    //     console.log(this.heroes);
-    //   }
-    //  );
     this.heroes$ = this.route.paramMap.pipe(
       switchMap(params => {
         console.log(params);

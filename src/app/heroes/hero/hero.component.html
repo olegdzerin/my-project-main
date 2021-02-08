@@ -1,0 +1,7 @@
+<p>hero works!</p>
+{{member.name}}
+<button (click)=sendToParent()>emit</button>
+<h4>myClick is an event on the custom ClickDirective:</h4>
+<button (myClick)="myClickEmitFn()" clickable 
+(click)= "clickMessageFn()">click with myClick</button>
+{{clickMessage}}

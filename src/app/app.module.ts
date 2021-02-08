@@ -16,6 +16,8 @@ import { AdminModule } from './admin/admin.module';
 import { FormsModule } from '@angular/forms';
 import { CustomersModule } from './customers/customers.module';
 import { OrdersModule } from './orders/orders.module';
+import { HeroesComponent } from './heroes/heroes.component';
+import { HeroComponent } from './heroes/hero/hero.component';
 // import {AdminComponent } from './admin/admin/admin.component'
 
 @NgModule({
@@ -26,6 +28,8 @@ import { OrdersModule } from './orders/orders.module';
     PageNotFoundComponent,
     ChildAComponent,
     ChildBComponent,
+    HeroesComponent,
+    HeroComponent,
     // AdminComponent 
    
   

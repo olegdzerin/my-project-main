@@ -1,0 +1,16 @@
+<p>heroes works!</p>
+
+<div *ngFor = "let hero of heroes">
+    <ul>
+        <li> {{hero.id}} </li> <span>{{hero.name}}</span>
+        <li>
+          
+        </li>
+    </ul>
+    <a routerLink="/first/{{hero.id}}">go to item</a>
+    <a [routerLink]="['/first', hero.id]">go to item variant-2</a>
+    <a [routerLink]="['/first/child-a']">go to children route</a>
+    <button (click)="goToItem(hero, $event)"> btn</button>
+  </div>
+
+<app-hero [member] = "hero" (event)="acceptFromChildren($event)"></app-hero>

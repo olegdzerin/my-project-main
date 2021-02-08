@@ -5,14 +5,20 @@ import { SecondComponent} from './second/second.component';
 import { PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import  { ChildAComponent} from './first/child-a/child-a.component';
 import  { ChildBComponent} from './first/child-b/child-b.component';
+import {HeroesComponent} from './heroes/heroes.component';
+import {HeroComponent} from './heroes/hero/hero.component'
 
 
 const routes: Routes = [
-  {
-    path: 'customers',
-    loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)
+  { path: 'heroes', component: HeroesComponent,
+  children: [
+    {
+      path: 'hero/:id',
+      component: HeroComponent, // child route component that the router renders
+    },
+  ]
   },
-  { path: 'heroes', 
+  { path: 'first', 
     component: FirstComponent,
     children: [
       {
@@ -25,7 +31,7 @@ const routes: Routes = [
       },
     ],
     },
-  { path: 'heroes/:id', component: SecondComponent },
+  { path: 'first/:id', component: SecondComponent },
    { path: '',   redirectTo: '', pathMatch: 'full' },
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },

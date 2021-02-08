@@ -11,9 +11,12 @@
 <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
 <nav>
   <ul>
-    <li><a routerLink="/heroes" routerLinkActive="active">First Component</a></li>
-    <li><a routerLink="/heroes/2" routerLinkActive="active">Second Component</a></li>
-  </ul>
+    <li><a routerLink="/first" routerLinkActive="active">First Component</a></li>
+    <li><a routerLink="/first/2" routerLinkActive="active">Second Component</a></li>
+      <li><a [routerLink]="['first','3']" routerLinkActive="active">Second Component variant-2</a></li>
+    <li><a routerLink="heroes">Go to heroes</a> </li>
+    
+    </ul>
 </nav>
 <button routerLink="/customers">Customers</button>
 <button routerLink="/orders">Orders</button>
