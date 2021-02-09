@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -10,4 +10,74 @@
 <body>
   <app-root></app-root>
 </body>
-</html>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  
+<title>W3.CSS Template</title>
+<base href="/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- <link rel="stylesheet" href="/css/w3.css"> -->
+<link rel="stylesheet" href="styles.css">
+
+<body onmouseover="w3_move()">
+  <!-- <body> -->
+
+  <!-- Navbar (sit on top) -->
+  <!-- <div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <div id="btn" class=" w3-button w3-red  w3-left" onclick="w3_open()">bt</div>
+
+      <a href="#home" class="w3-bar-item w3-button w3-mobile"><b>BR</b> Architects</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <!-- <div class="w3-right  ">
+        <a href="#projects" class="w3-bar-item w3-button w3-mobile">Projects</a>
+        <a href="#about" class="w3-bar-item w3-button w3-mobile">About</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class=" w3-container">
+
+    <aside id="mySidebar" class="w3-bar-block w3-light-grey w3-sidebar aside "
+      style="height:100%; width: 150px; margin-left: -12px;">
+      <div>
+        <ul class="w3-ul">
+          <li onclick="w3_close()"><a href="#home" class="w3-bar-item w3-button w3-mobile"><b>BR</b> Architects</a></li>
+          <li onclick="w3_close()"> <a href="#projects" class="w3-bar-item w3-button w3-mobile">Projects</a></li>
+          <li onclick="w3_close()"><a href="#about" class="w3-bar-item w3-button w3-mobile">About</a></li>
+          <li onclick="w3_close()"><a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a></li>
+
+        </ul>
+      </div>
+    </aside>  -->
+    <app-root></app-root>
+    <script>
+    
+      function w3_open() {
+        console.log('ok');
+       
+       document.getElementById("mySidebar").style.display = "block";
+      }
+  
+      function w3_close() {
+        //  console.log(document.body.clientWidth)
+        if (document.body.clientWidth < 600) {
+          document.getElementById("mySidebar").style.display = "none";
+        }
+  
+      }
+  
+      function w3_move() {
+        if (document.body.clientWidth >= 600) {
+          document.getElementById("mySidebar").style.display = "block";
+          }
+        
+      }
+    </script> 
+  </body>
+  
+  </html>

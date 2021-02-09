@@ -17,6 +17,7 @@ import { FormsModule ,  ReactiveFormsModule} from '@angular/forms';
 import { CustomersModule } from './customers/customers.module';
 import { OrdersModule } from './orders/orders.module';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 // import {AdminComponent } from './admin/admin/admin.component'
 
 @NgModule({
@@ -28,6 +29,7 @@ import { LoginComponent } from './login/login.component';
     ChildAComponent,
     ChildBComponent,
     LoginComponent,
+    HomeComponent,
     // AdminComponent 
    
   

@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
    }
   onSubmit() {
-     console.log(this.profileForm.value.firstName , this.data.firstName);
+     // console.log(this.profileForm.value.firstName , this.data.firstName);
      if((this.profileForm.value.firstName === this.data.firstName)&&
      (this.profileForm.value.lastName === this.data.lastName)) {
     this.authService.isLoggedIn = true;

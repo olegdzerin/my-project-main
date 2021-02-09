@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+#sideblock {
+    display: inline;
+}
+#main-content {
+    padding-left: 150px;
+}
+#head-main {
+    padding-top: 75px;
+}
+
+
+
+
+@media  (min-width:600px){
+    /* .aside{
+        margin-top: 224px;
+    } */
+    #btn{
+        display: none;
+    }
+}
+@media (min-width:600px){
+    .aside{
+        margin-top: 50px;
+    }
+}
+ @media screen and  (max-width:600px){
+    .aside{
+        display: none;
+    }
+    #main-content{
+        padding-left: 0px;
+    }
+ }
+@media screen and (min-width: 480px) {
+    body {
+      background-color: lightgreen;
+    }
+  }

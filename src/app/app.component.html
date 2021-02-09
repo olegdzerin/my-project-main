@@ -1,6 +1,40 @@
-<h1>Angular Router App</h1>
+
+ <!-- Navbar (sit on top) -->
+ <div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <div id="btn" class=" w3-button w3-red  w3-left" onclick="w3_open()">bt</div>
+
+    <a routerLink="home" routerLinkAktive="active" class="w3-bar-item w3-button w3-mobile"><b>BR</b> Architects</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right  ">
+      <!-- <a href="#projects" class="w3-bar-item w3-button w3-mobile">Projects</a>
+      <a href="#about" class="w3-bar-item w3-button w3-mobile">About</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a> -->
+      
+      <a  class="w3-bar-item w3-button w3-mobile" routerLink="/heroes" routerLinkActive="active">Projects</a>
+      <a class="w3-bar-item w3-button w3-mobile" routerLink="/heroes/2" routerLinkActive="active">About</a>
+      <a class="w3-bar-item w3-button w3-mobile" routerLink="/customers" routerLinkAktive="active">Contact</a>
+      <button id="login" *ngIf="true" (click)="login()"><a routerLink="/login"  routerLinkActive="active" class="w3-bar-item w3-button w3-mobile">Login</a></button>
+      <button id="logout" *ngIf="true" (click)="logout()"><a routerLink=""  routerLinkActive="active" class="w3-bar-item w3-button w3-mobile">Logout</a></button>
+    </div>
+  </div>
+</div>
+<div class=" w3-container">
+
+  <aside id="mySidebar" class="w3-bar-block w3-light-grey w3-sidebar aside "
+    style="height:100%; width: 150px; margin-left: -12px;display: none;" >
+    <div>
+      <ul class="w3-ul">
+        <li onclick="w3_close()"><a href="#home" class="w3-bar-item w3-button w3-mobile"><b>BR</b> Architects</a></li>
+        <li onclick="w3_close()"> <a href="#projects" class="w3-bar-item w3-button w3-mobile">Projects</a></li>
+        <li onclick="w3_close()"><a href="#about" class="w3-bar-item w3-button w3-mobile">About</a></li>
+        <li onclick="w3_close()"><a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a></li>
+      </ul>
+    </div>
+  </aside>
+
 <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
-<nav style="right: auto;">
+<!-- <nav style="right: auto;">
 <div style="width: 100px;margin-left: 650px;">
  
     <button id="login" *ngIf="true" (click)="login()">
@@ -10,26 +44,34 @@
       <a routerLink=""  routerLinkActive="active">logout</a>
     </button>
   
-</div></nav>
-<nav>
+</div></nav> -->
+<!-- <nav>
   <ul>
     <li><a routerLink="/heroes" routerLinkActive="active">First Component</a></li>
     <li><a routerLink="/heroes/2" routerLinkActive="active">Second Component</a></li>
   </ul>
-</nav>
-
-<div>this is loudChildren Component
-  <button routerLink="/customers">Customers</button>
+</nav> -->
+<div id="main-content">
+  <div class="w3-content w3-padding" style="max-width:1564px">
+  <div id="head-main">
+  <div>this is loudChildren Component
+    <button routerLink="/customers">Customers</button>
+  </div>
+  <div>this is loudChildren Component
+    <button routerLink="/orders">Orders</button>
+  </div>
+  <div>this is loudChildren Component that use CanActivate
+    <a routerLink="/admin" routerLinkActive="active">Admin</a>
+  </div>
 </div>
-<div>this is loudChildren Component
-  <button routerLink="/orders">Orders</button>
-</div>
-<div>this is loudChildren Component that use CanActivate
-  <a routerLink="/admin" routerLinkActive="active">Admin</a>
-</div>
+  </div>
 
 
-<button routerLink="">Home</button>
+
+<button routerLink="home">Home</button>
 <!-- The routed views render in the <router-outlet>-->
 <router-outlet></router-outlet>
+
+
+</div>
 
